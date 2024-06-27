@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to QR Code Converter</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF to QR Code Converter</h1>
+        <input type="file" id="pdfInput" accept="application/pdf">
+        <button id="generateQRCode">Generate QR Code</button>
+        <canvas id="qrCode"></canvas>
+        <p id="qrCodeLink"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+    <script src="js/qr_converter.js"></script>
+</body>
+</html>
