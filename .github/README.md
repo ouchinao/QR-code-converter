@@ -2,7 +2,7 @@
 
 ## 概要
 - 静的なページでurlをQRコードに変換するものです
-- (https://ouchinao.github.io/QR-code-converter/)で公開されています。
+- [github pages](https://ouchinao.github.io/QR-code-converter/) で公開されています。
 
 ## 使い方
 1. テキストボックスにURLを入力する
