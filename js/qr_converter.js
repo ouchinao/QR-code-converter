@@ -5,20 +5,18 @@ document.getElementById('generateQRCode').addEventListener('click', () => {
         return;
     }
 
-    reader.onload = async function(event) {
-        const pdfDataUrl = event.target.result;
-        // QRコードを生成する
-        const qr = new QRious({
-            element: document.getElementById('qrCode'),
-            value: pdfDataUrl,
-            size: 250,
-            level: 'H',
-        });
-
-        // データURIをリンクとして表示する
-        const qrCodeLink = document.getElementById('qrCodeLink');
-        qrCodeLink.innerHTML = `Access your PDF <a href="${pdfDataUrl}" target="_blank">here</a>`;
-    };
+    const qr = new QRious({
+        element: document.getElementById('qrCode'),
+        value: urlInput,
+        size: 250,
+        level: 'H',
+    });
     
-    reader.readAsDataURL(pdfInput);
+    // QR コードをダウンロードするためのリンクを作成
+    const downloadLink = document.createElement('a');
+    downloadLink.href = qr.toDataURL(); // QR コードの画像データを取得
+    downloadLink.download = 'QRCode.png'; // ダウンロードするファイル名
+    document.body.appendChild(downloadLink);
+    downloadLink.click(); // ダウンロードリンクを自動クリック
+    document.body.removeChild(downloadLink); // リンクを削除
 });
